@@ -6,6 +6,7 @@ How to build docker containers that use PowerShelll
 FROM mcr.microsoft.com/powershel
 SHELL ["pwsh", "-Command"]
 RUN Set-PSRepository -Name "PSGallery" -InstalationPolicy Trusted
+RUN Install-Module SampleModule
 ADD SampleScript.ps1 /scripts/SampleScript.ps1
 ENTRYPOINT ["pwsh", "-Command", "/scripts/SampleScript.ps1"]
 ```
