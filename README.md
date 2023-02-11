@@ -1,6 +1,7 @@
 # PowerShellContainers
-How to build docker containers that use PowerShelll
+All available tags for base images released by Microsoft can be found here https://hub.docker.com/_/microsoft-powershell
 
+## Building docker containers that use PowerShelll
 
 ```dockerfile
 FROM mcr.microsoft.com/powershel
@@ -11,4 +12,8 @@ ADD SampleScript.ps1 /scripts/SampleScript.ps1
 ENTRYPOINT ["pwsh", "-Command", "/scripts/SampleScript.ps1"]
 ```
 
-All available tags for based images released by Microsoft can be found here https://hub.docker.com/_/microsoft-powershell
+## Running PowersShell interactive console inside container
+
+```shell
+docker run -it --rm mcr.microsoft.com/powershell
+```
